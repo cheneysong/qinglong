@@ -245,7 +245,7 @@ update_qinglong() {
 
     local no_restart="$1"
     [[ -f $dir_root/package.json ]] && ql_depend_old=$(cat $dir_root/package.json)
-    reset_romote_url ${dir_root} "https://github.com/whyour/qinglong.git" ${current_branch}
+    reset_romote_url ${dir_root} "https://github.do/https://github.com/cheneysong/qinglong.git" ${current_branch}
     git_pull_scripts $dir_root ${current_branch}
 
     if [[ $exit_status -eq 0 ]]; then
@@ -260,7 +260,7 @@ update_qinglong() {
         echo -e "\n更新$dir_root失败，请检查原因...\n"
     fi
 
-    local url="https://github.com/whyour/qinglong-static.git"
+    local url="https://github.do/https://github.com/whyour/qinglong-static.git"
     if [[ -d ${ql_static_repo}/.git ]]; then
         reset_romote_url ${ql_static_repo} ${url} ${current_branch}
         git_pull_scripts ${ql_static_repo} ${current_branch}
